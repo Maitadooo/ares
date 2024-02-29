@@ -1,0 +1,32 @@
+Samba
+
+Sudo apt install samba cifs-utils
+
+whereis samba
+
+sudo systemctl status nmbd
+
+sudo nano /etc/samba/smb.conf
+
+workgroup = nombre trabajo
+
+Ubuntu
+
+sudo apt-get install samba
+
+sudo mkdir /samba
+
+sudo nano /etc/samba/smb.conf
+
+sudo useradd (usuario)
+
+smbpasswd -a (usuario)
+
+sudo mkdir /samba/publica
+
+sudo chown -R nobody:nogroup /samba/publica
+
+sudo chmod -R 0777 /samba/publica
+
+sudo chgrp sambashare /samba/publica
+

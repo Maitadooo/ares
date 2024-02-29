@@ -1,0 +1,30 @@
+NFS
+
+sudo apt install nfs-kernel-service
+
+sudo mkdir -p /mnt/carpetacompartida
+
+sudo chown nobody:nogroup carpetacompartida/
+
+sudo chmod 777 carpetacompartida/
+
+sudo nano /etc/exports
+
+/mnt/carpetacompartida  IP (rw,sync,so_subtree_check)
+
+sudo exportfs -a 
+
+sudo systemctl restart service
+
+
+Cliente
+sudo apt install nfs-common
+
+sudo mkdir -p /mnt/nfs_cliente
+
+sudo mount IP : /mnt/carpetacompartida /mnt/nfs_cliente
+
+sudo nano fstab
+
+ip:/mnt/carpetacompartida	/mnt/nfs_cliente	nfs	defaults	0	0
+
